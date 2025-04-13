@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-end mx-5 my-2">
+    <button class="btn btn-success"  (click)="add()">Add Task</button>
+
+</div>
+@for (todo of todos; track todo.id) {
+    <div class="container ">
+  
+        
+        <app-to-do-item
+          [todo]="todo"
+          (delete)="onDeleteTodo($event)"
+          (edit)="onEditTodo($event)"
+          (toggle)="onToggleTodo($event)"          
+        ></app-to-do-item>
+      </div>
+}
+

@@ -1,0 +1,40 @@
+<div class="container mt-4">
+    <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="title" class="form-label">Task Title</label>
+        <input
+          id="title"
+          type="text"
+          class="form-control"
+          formControlName="title"
+          placeholder="Enter task title"
+        />
+        @if (!isValidTitle) {
+            <div class="text-danger">
+              Title is required.
+            </div>
+        }
+      </div>
+  
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          id="description"
+          class="form-control"
+          formControlName="description"
+          rows="3"
+          placeholder="task description"
+        ></textarea>
+        @if (!isValidDescription) {
+            <div class="text-danger">
+              Description is required.
+            </div>
+        }
+      </div>
+  
+      <button type="submit" class="btn btn-success" >
+        Add Task
+      </button>
+    </form>
+  </div>
+  
